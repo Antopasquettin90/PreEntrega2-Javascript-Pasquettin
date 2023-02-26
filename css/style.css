@@ -1,3 +1,25 @@
 body{
     background-color: blue;
 }
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(247, 225, 36);
+    margin-top: 50px;
+    margin-left: 450px;
+}
+form {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(114, 245, 143);
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 450px;
+}
+button{
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 15%;
+    border-color: gray;
+    border-width: 30px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
