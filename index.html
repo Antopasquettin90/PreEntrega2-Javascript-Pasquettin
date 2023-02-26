@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,59 +55,3 @@
     <script src="js/main.js"></script>
     </body>
     </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<html>
-  <body>
-    <h1>Calculadora de Sueldo Final</h1>
-    <form>
-      <label for="numero-empleados">Número de empleados:</label>
-      <input type="number" id="numero-empleados" name="numero-empleados" required><br><br>
-      <div id="empleados"></div>
-  
-      <button type="submit">Calcular Sueldo Final</button>
-    </form>
-    <script>
-      function calcularSueldoFinal(sueldoBasico, descuentos, presentismo, sumaExtra) {
-        let descuentoTotal = descuentos.reduce((total, descuento) => total + descuento, 0);
-        let sueldoFinal = sueldoBasico + presentismo + sumaExtra - descuentoTotal;
-    
-        console.log("Descuentos: $" + descuentoTotal);
-        console.log("Sueldo Final: $" + sueldoFinal);
-      }
-    
-      document.querySelector("form").addEventListener("submit", (event) => {
-        event.preventDefault();
-        const numeroDeEmpleados = parseInt(document.querySelector("#numero-empleados").value);
-        const empleadosDiv = document.querySelector("#empleados");
-        empleadosDiv.innerHTML = "";
-    
-        for (let i = 0; i < numeroDeEmpleados; i++) {
-          const sueldoBasico = parseFloat(prompt(`Ingrese sueldo básico del empleado ${i+1}:`));
-          const descuentos = [];
-          descuentos.push(parseFloat(prompt("Ingrese el descuento de jubilación:")));
-          descuentos.push(parseFloat(prompt("Ingrese el descuento de obra social:")));
-          descuentos.push(parseFloat(prompt("Ingrese otros descuentos adicionales (en caso de no haber, ingrese 0):")));
-          const presentismo = parseFloat(prompt(`Ingrese presentismo del empleado ${i+1}:`));
-          const sumaExtra = parseFloat(prompt(`Ingrese pago extra del empleado ${i+1}:`));
-          const empleadoDiv = document.createElement("div");
-          empleadoDiv.innerHTML = `<h2>Empleado ${i+1}</h2>
-                                    <p>Sueldo básico: $${sueldoBasico}</p>
-                                    <p>Descuentos: $${descuentos.reduce((total, descuento) => total + descuento, 0)}</p>
-                                    <p>Presentismo: $${presentismo}</p>
-                                    <p>Pago extra: $${sumaExtra}</p>
-                                    <button type="button" onclick="calcularSueldoFinal(${sueldoBasico}, [${descuentos}], ${presentismo}, ${sumaExtra})">Calcular Sueldo Final</button>`;
-          empleadosDiv.appendChild(empleadoDiv);
-        }
-      });
-    </script>
-    </body>
-    </html>
->>>>>>> 0b3d01baf8e998aef2c37ac948dfb37f510b386c
